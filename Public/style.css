@@ -1,0 +1,49 @@
+*{
+  padding: 10px auto;
+  margin: 0px auto;
+}
+
+body{
+  background-color: #0000cd;
+}
+
+img{
+    max-height: 30%;
+    max-width: 30%;
+}
+.img{
+  text-align: center;
+}
+
+.form{
+  padding-top: 100px;
+  text-align: center;
+
+}
+
+form input{
+
+  border: solid #0000cd 3px;
+  font-size: 40px;
+
+}
+
+form button{
+
+  border: solid #0000cd 0px;
+  font-size: 40px;
+}
+
+form button:hover{
+ box-shadow: 3px 3px 5px black;
+}
+
+form button:active{
+ box-shadow: 2px 2px 1px black;
+  background-color: #0000cd;
+  color: white;
+}
+
+.fa-search{
+  font-size: 42px;
+}
