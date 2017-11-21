@@ -14,7 +14,7 @@ function handler(req, res) {
 
   if (url === '/') {
     //Display index.html
-    filepath = path.join(__dirname, '..', 'public', 'index.html');
+    filepath = path.join(__dirname, '..', 'Public', 'index.html');
 
     fs.readFile(filepath, function(error, file) {
       if (error) {
@@ -52,7 +52,7 @@ function handler(req, res) {
       png: 'image/png'
     }
 
-    filepath = path.join(__dirname, '..', 'public', url);
+    filepath = path.join(__dirname, '..', 'Public', url);
 
     fs.readFile(filepath, function(error, file) {
       if (error) {
