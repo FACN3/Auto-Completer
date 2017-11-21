@@ -1,13 +1,14 @@
 {
   "name": "auto-completer",
   "version": "1.0.0",
-  "description": "",
+  "description": "AutoCompleter",
   "main": "index.js",
   "directories": {
     "test": "tests"
   },
   "scripts": {
-    "test": "tape ./tests/test.js | tap-spec"
+    "test": "tape ./tests/test.js | tap-spec",
+    "start": "node src/server.js"
   },
   "repository": {
     "type": "git",
