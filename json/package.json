@@ -1,0 +1,22 @@
+{
+  "name": "auto-completer",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "directories": {
+    "test": "tests"
+  },
+  "scripts": {
+    "test": "tape ./tests/test.js | tap-spec"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/FACN3/Auto-Completer.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/FACN3/Auto-Completer/issues"
+  },
+  "homepage": "https://github.com/FACN3/Auto-Completer#readme"
+}
