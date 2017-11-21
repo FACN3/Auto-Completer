@@ -1,3 +1,4 @@
+
 // Read file and store it in array. error-first
 var fs = require('fs');
 
@@ -32,3 +33,8 @@ function filterData (data, str ) {
 
 
 }
+
+//Read file and store it in array.
+
+//Iterate over the array and filter from the given string.
+
