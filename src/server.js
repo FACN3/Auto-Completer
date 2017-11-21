@@ -1,3 +1,4 @@
+
 var http = require('http');
 var handler = require('./handler');
 
@@ -8,4 +9,4 @@ var server = http.createServer(handler);
 server.listen(port);
 
 console.log('Server is listening on PORT 4000...');
-console.log(db);
+

@@ -1,9 +1,10 @@
 var fs = require('fs');
 var path = require('path');
+
 var querystring = require('querystring');
 
-
 function handler(req, res) {
+
   var url = req.url;
   console.log(url);
 
