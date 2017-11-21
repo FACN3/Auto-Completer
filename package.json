@@ -1,13 +1,11 @@
 {
   "name": "auto-completer",
   "version": "1.0.0",
-  "description": "",
+  "description": "Auto complete App",
   "main": "index.js",
-  "directories": {
-    "test": "tests"
-  },
   "scripts": {
-    "test": "tape ./tests/test.js | tap-spec"
+    "test": "tape ./tests/test.js | tap-spec",
+    "start": "nodemon ./src/server.js"
   },
   "repository": {
     "type": "git",
@@ -18,5 +16,10 @@
   "bugs": {
     "url": "https://github.com/FACN3/Auto-Completer/issues"
   },
-  "homepage": "https://github.com/FACN3/Auto-Completer#readme"
+  "homepage": "https://github.com/FACN3/Auto-Completer#readme",
+  "devDependencies": {
+    "nodemon": "^1.12.1",
+    "tap-spec": "^4.1.1",
+    "tape": "^4.8.0"
+  }
 }
