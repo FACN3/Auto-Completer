@@ -3,8 +3,8 @@ var path = require('path');
 var querystring = require('querystring');
 var filepath;
 
-function handleError(err) {
-  console.log(error);
+function handleError(err, res) {
+  console.log(err);
   res.writeHead(404, {'Content-Type': 'text/html'});
   res.end('<h1>FiLE NoT FouNd</h1>');
 }
@@ -72,7 +72,7 @@ function handleHome(req, res) {
 
     fs.readFile(filepath, function(error, file) {
       if (error) {
-        handleError(error);
+        handleError(error, res);
       } else {
           res.writeHead(200, {'Content-Type': 'text/html'});
           res.end(file);
@@ -85,22 +85,23 @@ function handleSearch(req, res) {
     filepath = path.join(__dirname, '..', 'small.txt');
     fs.readFile(filepath, function(error, file) {
       if (error) {
-        handleError(error);
+        handleError(error, res);
       }
       data = filepath.split('\n');
       console.log(data);
       //res.end(file);
-      request.on('end', function(str) {
-        response.end(filterData(data, str));
+      req.on('end', function(str) {
+        console.log(filterData(data, str));
+        res.end(filterData(data, str));
       });
-    });
-  }
+  });
 }
+
 
 function handlePublic(req, res) {
   // Load assets
+  var url = req.url;
   ext = url.split('.')[1];
-  console.log(ext);
 
   var extTypes = {
     css: 'text/css',
@@ -113,7 +114,7 @@ function handlePublic(req, res) {
 
   fs.readFile(filepath, function(error, file) {
     if (error) {
-      handleError(error);
+      handleError(error, res);
     } else {
       res.writeHead(200, {'Content-Type': extTypes[ext]});
       res.end(file);
