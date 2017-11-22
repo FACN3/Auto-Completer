@@ -3,6 +3,7 @@
   <head>
     <meta charset="utf-8">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link href="https://fonts.googleapis.com/css?family=Shadows+Into+Light+Two" rel="stylesheet">
     <link rel="stylesheet" type="text/css" href="style.css">
     <title></title>
   </head>
@@ -10,10 +11,12 @@
 <div class="img">
 <img src="./assets/googlev2.png" alt="The Google Killer">
 </div>
-
+  <h2 class="tagline">Only for the Famous</h2>
  <div class="form">
   <form class="" action="index.html" method="post">
-    <input type="text" name="text" id="search">
+    <input type="text" name="text" id="search" list="search--results">
+    <datalist id="search--results">
+    </datalist>
     <button type="button" name="Search"><i class="fa fa-search" aria-hidden="true"></i></button>
   </form>
 </div>
