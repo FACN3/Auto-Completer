@@ -13,7 +13,7 @@ function sendRequest(url, callback) {
     }
   };
 
-  xhr.open("GET", url, true);
+  xhr.open("GET", url);
   xhr.send();
 }
 
@@ -24,7 +24,13 @@ document.getElementById("search").addEventListener('keyup', function(event) {
   console.log(url);
   sendRequest(url, function(result) {
     console.log("Result#2: ", result);
+    document.querySelector('.suggestresults').textContent = result
+    if (searchTerm === "") {
+      document.querySelector('.suggestresults').textContent = "";
+    }
   });
 });
+
+
 
 //https://www.w3schools.com/tags/tryit.asp?filename=tryhtml5_datalist
