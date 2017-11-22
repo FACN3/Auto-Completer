@@ -1,5 +1,7 @@
 var test = require('tape');
-var filterData = require('./helpers');
+var filterData = require('../src/helpers');
+var path = require('path');
+var data = ["About", "Bounty", "Castle"];
 
 //---------Testing tape and tap-spec --------//
 function add(a, b) {
@@ -13,13 +15,19 @@ test('This test should return addition of 2 numbers', function(t) {
 //-----------------------------------------//
 
 test('This test should return and array of strings containing the given string', function(t) {
-  t.equal(["About", "Bounty"], filterData("ou"));
-  t.deepEqual(["About", "Bounty"], filterData("ou"));
+  var actual = filterData(data, "ou");
+  var expected = ["About", "Bounty"];
+  //t.equal(actual, expected);
+  t.deepEqual(actual, expected);
+  console.log(actual + " " + expected);
   t.end();
 });
 
 test('This test should return an empty array if the string is not found', function(t) {
-  t.equal([], filterData("zzzzzzz"));
-  t.deepEqual([], filterData("zzzzzzz"));
+  var actual = filterData(data, "zzzzzzz");
+  var expected = [];
+  //t.equal(actual, expected);
+  t.deepEqual(actual, expected);
+  console.log(actual + " " + expected);
   t.end();
 });
