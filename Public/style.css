@@ -4,8 +4,10 @@
 }
 
 body{
-  background-color: #0000cd;
+  /*background-color: #0000cd;*/
+  background: linear-gradient(to right, #0000cd, red, lightgreen);
   text-align: center;
+  padding-bottom: 20%;
 }
 
 .tagline {
@@ -25,7 +27,7 @@ img{
 }
 
 .form{
-  padding-top: 70px;
+  padding-top: 3%;
   text-align: center;
 
 }
@@ -33,7 +35,7 @@ img{
 form input{
 
   border: solid #0000cd 3px;
-  font-size: 40px;
+  font-size: 2em;
 
 }
 
