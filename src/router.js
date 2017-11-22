@@ -1,4 +1,5 @@
 var {handleHome, handlePublic, handleSearch} = require('./handler');
+var querystring = require('querystring');
 
 function router(req, res) {
   var url = req.url;
@@ -6,8 +7,11 @@ function router(req, res) {
   if (url === '/') {
     handleHome(req, res);
   }
-  else if (url === '/search') {
-    handleSearch(req, res);
+  else if (url.split('?')[0] === '/search') {
+    var query =  url.split('=')[1];
+    console.log("url: " + url);
+    console.log("query: " + query);
+    handleSearch(req, res, query);
   }
   else {
     handlePublic(req, res);

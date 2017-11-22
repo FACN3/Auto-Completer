@@ -15,7 +15,7 @@ var small_file = __dirname + "/../small.txt";
 // filterData takes in the names of famous people and the user input
 // takes in a string of what user has entered
 
-function filterData (data, str ) {
+function filterData (data, str) {
 
   var result = [];
   var limitResult = 0;
