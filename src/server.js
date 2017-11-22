@@ -3,6 +3,7 @@ var http = require('http');
 var router = require('./router');
 
 var port = process.env.PORT || 4000;
+var host = process.env.HOST || localhost;
 
 var server = http.createServer(router);
 
