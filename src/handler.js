@@ -4,68 +4,124 @@ var querystring = require('querystring');
 var filepath;
 
 function handleError(err) {
-
+  console.log(error);
+  res.writeHead(404, {'Content-Type': 'text/html'});
+  res.end('<h1>FiLE NoT FouNd</h1>');
 }
 
-function handler(req, res) {
+// function handler(req, res) {
+//
+//   var url = req.url;
+//   console.log(url);
+//
+//   if (url === '/') {
+//     //Display index.html
+//     filepath = path.join(__dirname, '..', 'Public', 'index.html');
+//
+//     fs.readFile(filepath, function(error, file) {
+//       if (error) {
+//         handleError(error);
+//       } else {
+//         res.writeHead(200, {'Content-Type': 'text/html'});
+//         res.end(file);
+//       }
+//     });
+//   }
+//   else if (url === '/search') {
+//     var data = [];
+//     filepath = path.join(__dirname, '..', 'small.txt');
+//     fs.readFile(filepath, function(error, file) {
+//       if (error) {
+//         handleError(error);
+//       }
+//       data = filepath.split('\n');
+//       console.log(data);
+//       //res.end(file);
+//       request.on('end', function(str) {
+//         response.end(filterData(data, str));
+//       });
+//     });
+//   }
+//   else {
+    // Load assets
+  //   ext = url.split('.')[1];
+  //   console.log(ext);
+  //
+  //   var extTypes = {
+  //     css: 'text/css',
+  //     js: 'application/javascript',
+  //     html: 'text/html',
+  //     png: 'image/png'
+  //   }
+  //
+  //   filepath = path.join(__dirname, '..', 'Public', url);
+  //
+  //   fs.readFile(filepath, function(error, file) {
+  //     if (error) {
+  //       handleError(error);
+  //     } else {
+  //       res.writeHead(200, {'Content-Type': extTypes[ext]});
+  //       res.end(file);
+  //     }
+  //   });
+  // }
+// }
 
-  var url = req.url;
-  console.log(url);
-
-  if (url === '/') {
-    //Display index.html
-    filepath = path.join(__dirname, '..', 'Public', 'index.html');
+function handleHome(req, res) {
+  filepath = path.join(__dirname, '..', 'Public', 'index.html');
 
     fs.readFile(filepath, function(error, file) {
       if (error) {
-        console.log(error);
-        res.writeHead(404, {'Content-Type': 'text/html'});
-        res.end('<h1>FiLE NoT FouNd</h1>');
+        handleError(error);
       } else {
-        res.writeHead(200, {'Content-Type': 'text/html'});
-        res.end(file);
+          res.writeHead(200, {'Content-Type': 'text/html'});
+          res.end(file);
       }
     });
-  }
-  else if (url === '/search') {
+}
+
+function handleSearch(req, res) {
     var data = [];
     filepath = path.join(__dirname, '..', 'small.txt');
     fs.readFile(filepath, function(error, file) {
       if (error) {
-        console.log(error);
-        return;
+        handleError(error);
       }
       data = filepath.split('\n');
       console.log(data);
-      res.end(file);
-    });
-  }
-  else {
-    // Load assets
-    ext = url.split('.')[1];
-    console.log(ext);
-
-    var extTypes = {
-      css: 'text/css',
-      js: 'application/javascript',
-      html: 'text/html',
-      png: 'image/png'
-    }
-
-    filepath = path.join(__dirname, '..', 'Public', url);
-
-    fs.readFile(filepath, function(error, file) {
-      if (error) {
-        console.log(error);
-        res.writeHead(404, {'Content-Type': 'text/plain'});
-        res.end('<h1>FiLE NoT FouNd</h1>');
-        res.end();
-      } else {
-        res.writeHead(200, {'Content-Type': extTypes[ext]});
-        res.end(file);
-      }
+      //res.end(file);
+      request.on('end', function(str) {
+        response.end(filterData(data, str));
+      });
     });
   }
 }
 
-module.exports = handler;
+function handlePublic(req, res) {
+  // Load assets
+  ext = url.split('.')[1];
+  console.log(ext);
+
+  var extTypes = {
+    css: 'text/css',
+    js: 'application/javascript',
+    html: 'text/html',
+    png: 'image/png'
+  }
+
+  filepath = path.join(__dirname, '..', 'Public', url);
+
+  fs.readFile(filepath, function(error, file) {
+    if (error) {
+      handleError(error);
+    } else {
+      res.writeHead(200, {'Content-Type': extTypes[ext]});
+      res.end(file);
+    }
+  });
+}
+
+
+module.exports = {
+  handleHome, handlePublic, handleSearch
+}
