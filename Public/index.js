@@ -1,4 +1,4 @@
-var base_url = 'http://localhost:4000/search?q='
+var base_url = 'https://localhost:4000/search?q='
 //var query = document.getElementById("search").value;
 
 function sendRequest(url, callback) {
