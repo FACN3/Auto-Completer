@@ -1,12 +1,11 @@
 
 var http = require('http');
-var handler = require('./handler');
+var router = require('./router');
 
 var port = 4000;
 
-var server = http.createServer(handler);
+var server = http.createServer(router);
 
 server.listen(port);
 
 console.log('Server is listening on PORT 4000...');
-
