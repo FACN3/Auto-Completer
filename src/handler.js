@@ -25,7 +25,7 @@ function handleHome(req, res) {
 
 function handleSearch(req, res, str) {
     var words = [];
-    filepath = path.join(__dirname, '..', 'small.txt');
+    filepath = path.join(__dirname, '..', 'famous_people.txt');
     fs.readFile(filepath, function(error, file) {
       if (error) {
         handleError(error, res);

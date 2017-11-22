@@ -17,7 +17,7 @@ function sendRequest(url, callback) {
   xhr.send();
 }
 
-document.getElementById("search").addEventListener("change", function(event) {
+document.getElementById("search").addEventListener('keyup', function(event) {
   console.log(event.target.value);
   var searchTerm = event.target.value;
   var url = base_url + searchTerm;
