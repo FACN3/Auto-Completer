@@ -4,19 +4,32 @@
 }
 
 body{
-  background-color: #0000cd;
+  /*background-color: #0000cd;*/
+  background: linear-gradient(to right, #0000cd, red, blue);
+  text-align: center;
+  padding-top: 4%;
+  padding-bottom: 6%;
+}
+
+.tagline {
+  /*margin-top: auto;*/
+  padding-top: 1.5%;
+  font-size: 2.5em;
+  color: white;
+  font-family: 'Shadows Into Light Two', cursive;
 }
 
 img{
     max-height: 30%;
     max-width: 30%;
 }
+
 .img{
   text-align: center;
 }
 
 .form{
-  padding-top: 100px;
+  padding-top: 3%;
   text-align: center;
 
 }
@@ -24,8 +37,12 @@ img{
 form input{
 
   border: solid #0000cd 3px;
-  font-size: 40px;
+  font-size: 2em;
 
+}
+
+input::-webkit-calendar-picker-indicator {
+  display: none;
 }
 
 form button{
