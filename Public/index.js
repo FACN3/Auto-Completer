@@ -15,6 +15,20 @@ function sendRequest(url, callback) {
   xhr.send();
 }
 
+function displayGiphy() {
+  var query = document.getElementById('search').value;
+  console.log(query);
+  var gifRequest = "https://api.giphy.com/v1/gifs/search?q=" + query + "&api_key=dc6zaTOxFJmzC";
+  sendRequest(gifRequest, function(results) {
+    console.log(results);
+    var giphyObj = results;
+    var gifDrop = document.querySelector(".gif");
+    var link = giphyObj.data[1].images.downsized_medium.url;
+    document.querySelector('.gif').setAttribute("alt", query);
+    gifDrop.src = link;
+  });
+}
+
 document.getElementById("search").addEventListener('keyup', function(event) {
   console.log(event.target.value);
   var searchTerm = event.target.value;
