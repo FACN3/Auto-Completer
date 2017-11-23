@@ -25,7 +25,7 @@ document.getElementById("search").addEventListener('keyup', function(event) {
     console.log("Results#2: ", results);
     results.forEach(function(item) {
       var option = document.createElement('option');
-      option.value = item;
+      option.value = item.split(',')[1];
       document.getElementById('search--results').appendChild(option);
     });
   });
