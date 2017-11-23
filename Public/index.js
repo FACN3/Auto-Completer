@@ -3,7 +3,6 @@ var base_url = '/search?q='
 function sendRequest(url, callback) {
   var xhr = new XMLHttpRequest(url);
   xhr.onreadystatechange = function() {
-      //console.log(xhr.readyState, xhr.status);
     if (xhr.readyState == 4 && xhr.status == 200) {
       console.log(xhr.readyState, xhr.status);
       callback(JSON.parse(xhr.responseText));

@@ -17,7 +17,6 @@ test('This test should return addition of 2 numbers', function(t) {
 test('This test should return and array of strings containing the given string', function(t) {
   var actual = filterData(data, "ou");
   var expected = ["About", "Bounty"];
-  //t.equal(actual, expected);
   t.deepEqual(actual, expected);
   console.log(actual + " " + expected);
   t.end();
@@ -26,7 +25,6 @@ test('This test should return and array of strings containing the given string',
 test('This test should return an empty array if the string is not found', function(t) {
   var actual = filterData(data, "zzzzzzz");
   var expected = [];
-  //t.equal(actual, expected);
   t.deepEqual(actual, expected);
   console.log(actual + " " + expected);
   t.end();
