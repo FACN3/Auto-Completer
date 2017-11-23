@@ -9,8 +9,6 @@ function router(req, res) {
   }
   else if (url.split('?')[0] === '/search') {
     var query =  url.split('=')[1];
-    console.log("url: " + url);
-    console.log("query: " + query);
     handleSearch(req, res, query);
   }
   else {
