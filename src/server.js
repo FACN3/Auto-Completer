@@ -16,7 +16,7 @@ function listen(port, host) {
       return;
     }
     console.log("Server running on port " + port);
-    spawn("open", [host + port + "/"]);
+    //spawn("open", [host + port + "/"]);
   });
 }
 
