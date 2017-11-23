@@ -7,6 +7,4 @@ var port = process.env.PORT || 4000;
 
 var server = http.createServer(router);
 
-server.listen(port, function() {
-  console.log("Server is listening on PORT ", port);
-});
+server.listen(port);
