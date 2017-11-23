@@ -1,4 +1,3 @@
-var spawn = require('child_process').spawn;
 var http = require('http');
 var router = require('./router');
 
