@@ -46,7 +46,7 @@ git clone https://github.com/FACN3/Auto-Completer.git
 2) Go to the folder via the Terminal and then type:
 
 ```
-npm devStart
+npm devstart
 ```
 
 Enjoy the site 😄
