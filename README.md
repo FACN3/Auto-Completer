@@ -35,6 +35,22 @@ The chain of events were to take place as follows
 1) Insert any text in the search box (the database is however a list of famous people)
 2) As the user types they will see suggested results returned, relative to what has been typed.
 
+#### Instructions for cloning the website:
+
+1) Clone the repository
+
+```
+git clone https://github.com/FACN3/Auto-Completer.git
+```
+
+2) Go to the folder via the Terminal and then type:
+
+```
+npm devStart
+```
+
+Enjoy the site 😄
+
 ----------------------------------
 
 
