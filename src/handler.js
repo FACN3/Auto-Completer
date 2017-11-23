@@ -34,6 +34,7 @@ function handleSearch(req, res, str) {
       console.log(words);
       var results = filterData(words, str);
       console.log(results);
+      res.writeHead(200, {'Access-Control-Allow-Origin': 'https://autocompleteforthefamous.herokuapp.com'});
       res.end(JSON.stringify(results));
   });
 }
