@@ -64,3 +64,12 @@ form button:active{
 .fa-search{
   font-size: 42px;
 }
+
+.suggestresults{
+  border: solid #0000cd 1em;
+  background-color: white;
+  font-size: 1.250em;
+  font-family: Arial;
+  text-align: left;
+
+}
