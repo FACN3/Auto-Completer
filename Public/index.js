@@ -18,7 +18,7 @@ function sendRequest(url, callback) {
 function displayGiphy() {
   var query = document.getElementById('search').value;
   console.log(query);
-  var gifRequest = "http://api.giphy.com/v1/gifs/search?q=" + query + "&api_key=dc6zaTOxFJmzC";
+  var gifRequest = "https://api.giphy.com/v1/gifs/search?q=" + query + "&api_key=dc6zaTOxFJmzC";
   sendRequest(gifRequest, function(results) {
     console.log(results);
     var giphyObj = results;
