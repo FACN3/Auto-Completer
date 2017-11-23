@@ -7,17 +7,6 @@ var port = process.env.PORT || 4000;
 
 var server = http.createServer(router);
 
-function listen(port, host) {
-  //Don't need try/catch here as this is an asynchronous call
-  server.listen(port, host, function(error) {
-    if (error) {
-      console.error("Unable to listen on port", port, error);
-      //listen(port + 1);
-      return;
-    }
-    console.log("Server running on port " + port);
-    //spawn("open", [host + port + "/"]);
-  });
-}
-
-listen(port, host);
+server.listen(port, function() {
+  console.log("Server is listening on PORT ", port);
+});
