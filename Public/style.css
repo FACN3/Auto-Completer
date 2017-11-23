@@ -41,6 +41,10 @@ form input{
 
 }
 
+input::-webkit-calendar-picker-indicator {
+  display: none;
+}
+
 form button{
 
   border: solid #0000cd 0px;

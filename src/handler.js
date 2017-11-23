@@ -48,7 +48,8 @@ function handlePublic(req, res) {
     css: 'text/css',
     js: 'application/javascript',
     html: 'text/html',
-    png: 'image/png'
+    png: 'image/png',
+    ico: 'image/x-icon'
   }
 
   filepath = path.join(__dirname, '..', 'Public', url);
