@@ -1,4 +1,4 @@
-var base_url = 'https://127.0.0.1:4000/search?q='
+var base_url = '/search?q='
 //var query = document.getElementById("search").value;
 
 function sendRequest(url, callback) {
